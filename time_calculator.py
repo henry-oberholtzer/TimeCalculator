@@ -13,11 +13,13 @@ def add_time(start, duration, day=None):
     
     sum_hours = start_hours + duration_hours + round(60 / sum_mins % 1)
 
+    day_count = ''
     if sum_hours / 12 > 1:
         if am_pm == 'AM':
             am_pm = 'PM'
         else:
             am_pm = 'AM'
+            day_count = ' (next day)'
 
 
-    return f'{sum_hours - 12 * round(sum_hours / 12)}:{str(sum_mins % 60).zfill(2)} {am_pm}'
+    return f'{sum_hours - 12 * round(sum_hours / 12)}:{str(sum_mins % 60).zfill(2)} {am_pm}{day_count}'

@@ -14,12 +14,18 @@ test_cases = [
         "3:07 PM",
         'Expected calling "add_time()" with "11:55 AM", "3:12" to return "3:07 PM"',
         id = "different_period"
+    ),
+    pytest.param(
+        "9:15 PM", "5:30",
+        "2:45 AM (next day)",
+        'Expected time to end with "(next day)" when it is the next day.',
+        id="text_next_day"
     )
 ]
 #     def test_next_day(self):
-#         actual = add_time("9:15 PM", "5:30")
-#         expected = "2:45 AM (next day)"
-#         self.assertEqual(actual, expected, 'Expected time to end with "(next day)" when it is the next day.')
+#         actual = add_time()
+#         expected = 
+#         self.assertEqual(actual, expected, )
 
 #     def test_period_change_at_twelve(self):
 #         actual = add_time("11:40 AM", "0:25")
