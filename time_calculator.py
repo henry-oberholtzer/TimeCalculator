@@ -38,4 +38,11 @@ def add_time(start, duration, day=None):
     if hours_print == 0:
         hours_print += 12
 
-    return f'{hours_print}:{str(mins).zfill(2)} {am_pm}{days_later}'
+    day_print = ''
+    if day != None:
+        day_list = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        start_day = day_list.index(str.capitalize(day))
+        day_index = int((start_day + days % 7) % 7)
+        day_print = f', {day_list[day_index]}'
+
+    return f'{hours_print}:{str(mins).zfill(2)} {am_pm}{day_print}{days_later}'
